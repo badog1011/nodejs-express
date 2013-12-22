@@ -39,10 +39,10 @@ app.get('/Ting', hello.Ting);
 app.get('/1/info', api.info);
 
 //CRUD
-app.post('/user/Ting', api.create);
-app.get('/user/Ting', api.read);
-app.put('/user/Ting', api.update);
-app.delete('/user/Ting', api.delete);
+app.post('/1/user/:nickname', api.create);
+app.get('/1/user/:nickname', api.read);
+app.put('/1/user/:nickname', api.update);
+app.delete('/1/user/:nickname', api.delete);
 
 
 
