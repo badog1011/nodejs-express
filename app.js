@@ -24,6 +24,7 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // development only
 if ('development' == app.get('env')) {
@@ -40,7 +41,7 @@ app.get('/1/info', api.info);
 
 //CRUD
 app.post('/1/user/:nickname', api.create);
-app.get('/1/user/:nickname', api.read);
+app.get('/1/user', api.read);
 app.put('/1/user/:nickname', api.update);
 app.delete('/1/user/:nickname', api.delete);
 
