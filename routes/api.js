@@ -21,7 +21,7 @@ exports.info = function(req, res){
 
 /*Ex4*/
 var vcard=[];
-
+var memNum=0;
 exports.create = function(req, res){
   var person = {
   	nickname: "",
@@ -62,15 +62,17 @@ exports.update = function(req, res){
 
 exports.delete = function(req, res){
   console.log(">>>>>>>>>>>>> delete");
+  var temp=[];
   var nickname = req.params.nickname;
 
   vcard.forEach(function (entry) {
-  	if (entry.nickname === nickname){
+  	if (entry.nickname != nickname){
   		console.log('found!');
 
-  		vcard.pop(entry);
+  		temp.push(entry);
   	}
   });
+    vcard = temp;
   res.end();
 };
 
